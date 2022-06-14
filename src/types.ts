@@ -8,12 +8,17 @@ export type LoopIndex = [-1, ...Uints];
 export type TupleOf<Value, Length extends LoopIndex[number]> = Length extends 0 | -1
   ? []
   : [Value, ...TupleOf<Value, LoopIndex[Length]>];
-
-
-export type InputFunctionArg<Input> = readonly [(arg: Input) => unknown, ...AnyFn[]];
-export type OutputFunctionReturn<Output> = readonly [
-  ...TupleOf<AnyFn, LoopIndex[number]>,
-  (...args: never[]) => Output
-];
-export type PipeInput<Input, Output> = InputFunctionArg<Input> & OutputFunctionReturn<Output>;
-export type NewOptionsType = Parameters<editor.IStandaloneCodeEditor['updateOptions']>[0]
+  
+  
+  export type InputFunctionArg<Input> = readonly [(arg: Input) => unknown, ...AnyFn[]];
+  export type OutputFunctionReturn<Output> = readonly [
+    ...TupleOf<AnyFn, LoopIndex[number]>,
+    (...args: never[]) => Output
+  ];
+  export type PipeInput<Input, Output> = InputFunctionArg<Input> & OutputFunctionReturn<Output>;
+  export type NewOptionsType = Parameters<editor.IStandaloneCodeEditor['updateOptions']>[0]
+  
+  export interface MacroFormApplication extends FormApplication<FormApplicationOptions, MacroConfig>
+  {
+    form: HTMLFormElement | null
+  }

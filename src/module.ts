@@ -1,7 +1,9 @@
+import { ConfiguredDocumentClass, ConfiguredDocumentClassForName } from "@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes";
 import { attachMonacoEditor, registerTypes, setupMonaco } from "./editor";
 import { furnaceFix } from "./fixes/furnace";
 import { bailOnMacroEditor } from "./fixes/macroeditor";
 import { registerSettings, settings } from "./settings";
+import { MacroFormApplication } from "./types";
 
 
 Hooks.once("init", async function () {
@@ -31,10 +33,15 @@ Hooks.on("monaco-editor.ready", async (register: typeof registerTypes) => {
   }
 });
 
-Hooks.on("renderMacroConfig", ({ form }: { form: HTMLFormElement }) => {
+
+Hooks.on("renderMacroConfig", (app: MacroFormApplication) => {
   if (settings.enableMonacoEditor) {
     bailOnMacroEditor()
-    furnaceFix(form);
-    attachMonacoEditor(form)
+    furnaceFix(app.form!);
+    attachMonacoEditor(app.object.id!, app.form!)
   }
 });
+
+Hooks.on<Hooks.CloseApplication<MacroFormApplication>>("closeMacroConfig", (app, html) => {
+  console.log(`Closed macro editor ${app.object.data._id}`)
+})

@@ -76,7 +76,7 @@ export async function setupMonaco() {
 let typesLoaded = false
 let monacoLoaded = false
 
-export async function attachMonacoEditor(form: HTMLFormElement) {
+export async function attachMonacoEditor(id: string, form: HTMLFormElement) {
   if(!monacoLoaded) {
      // settings is not available all the time so we need to do this in fairly dumb way
     if(!settings.delayedLoading) {
@@ -144,12 +144,12 @@ export async function attachMonacoEditor(form: HTMLFormElement) {
   });
   observer.observe(editor.getContainerDomNode());
 
-  form.addEventListener("submit", () => {
+  createEditorCloseHook(id, () => {
     activeEditors.delete(editor);
     editor.dispose();
     // probably unnecessary but we should clean up after ourselves.
     observer.disconnect();
-  });
+  })
 
   select.addEventListener("change", (e) => {
     const model = editor.getModel();
@@ -166,4 +166,22 @@ export async function attachMonacoEditor(form: HTMLFormElement) {
       );
     }
   });
+}
+
+function createEditorCloseHook(id: string, callback: Function)
+{
+  Hooks.once<Hooks.CloseApplication<FormApplication>>("closeMacroConfig", (app, html) => {
+    debugger
+    // @ts-ignore
+    const editorId = app.object.data._id
+    if (editorId == id)
+    {
+      callback()
+    }
+    else
+    {
+      // Not the right editor, recreate hook
+      createEditorCloseHook(id, callback)
+    }
+  })
 }
