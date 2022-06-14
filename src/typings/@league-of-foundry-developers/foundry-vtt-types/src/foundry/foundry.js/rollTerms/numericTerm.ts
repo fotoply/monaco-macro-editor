@@ -1,6 +1,0 @@
-
-    export default [
-      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\foundry.js\\rollTerms\\numericTerm.d.ts",
-      "declare global{/**\n * A type of RollTerm used to represent static numbers.\n */class NumericTerm extends RollTerm{constructor({number,options}:NumericTermData);number:NumericTermData['number'];/**\n * @defaultValue\n * ```typescript\n * new RegExp(`^([0-9]+(?:\\\\.[0-9]+)?)${RollTerm.FLAVOR_REGEXP_STRING}?$`)\n * ```\n */static REGEXP:RegExp;/**\n * @defaultValue `['number']`\n */static SERIALIZE_ATTRIBUTES:string[];get expression():string;get total():number;/**\n * Determine whether a string expression matches a NumericTerm\n * @param expression - The expression to parse\n */static matchTerm(expression:string):RegExpMatchArray|null;/**\n * Construct a term of this type given a matched regular expression array.\n * @param match -  The matched regular expression array\n * @returns The constructed term\n */static fromMatch(match:RegExpMatchArray):NumericTerm;}}interface NumericTermData{number:number;/**\n * @defaultValue `{}`\n */\noptions?:RollTerm.Options;}export{};"
-    ]
-  

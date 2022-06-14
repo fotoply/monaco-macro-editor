@@ -1,0 +1,6 @@
+
+    export default [
+      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\client\\data\\collections\\macros.d.ts",
+      "import { ConfiguredDocumentClass } from '../../../../types/helperTypes';\n\ndeclare global {\n  /**\n   * The singleton collection of Macro documents which exist within the active World.\n   * This Collection is accessible within the Game object as game.macros.\n   *\n   * @see {@link Macro} The Macro document\n   * @see {@link MacroDirectory} The MacroDirectory sidebar directory\n   */\n  class Macros extends WorldCollection<typeof foundry.documents.BaseMacro, 'Macros'> {\n    static override documentName: 'Macro';\n\n    override get directory(): typeof ui.macros;\n\n    override fromCompendium(\n      document:\n        | InstanceType<ConfiguredDocumentClass<typeof foundry.documents.BaseMacro>>\n        | InstanceType<ConfiguredDocumentClass<typeof foundry.documents.BaseMacro>>['data']['_source'],\n      options?: WorldCollection.FromCompendiumOptions | undefined\n    ): Omit<\n      InstanceType<ConfiguredDocumentClass<typeof foundry.documents.BaseMacro>>['data']['_source'],\n      '_id' | 'folder'\n    >;\n  }\n}\n"
+    ]
+  

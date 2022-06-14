@@ -1,6 +1,0 @@
-
-    export default [
-      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\foundry.js\\cameraPopoutAppWrapper.d.ts",
-      "/**\n * Abstraction of the Application interface to be used with the Draggable class as a substitute for the app\n * This class will represent one popout feed window and handle its positioning and draggability\n */declare class CameraPopoutAppWrapper{/**\n * @param view- The CameraViews application that this popout belongs to\n * @param userId- ID of the user this popout belongs to\n * @param element- The div element of this specific popout window\n */constructor(view:CameraViews,userId:string,element:JQuery);/**\n * The CameraViews application that this popout belongs to\n */\nview:CameraViews;/**\n * The div element of this specific popout window\n */\nelement:JQuery;/**\n * ID of the user this popout belongs to\n */\nuserId:string;/**\n * Get the current position of this popout window\n */get position():Application.Position;/** @override */\nsetPosition({left,top,width,height,scale}?:Partial<Application.Position>):void;private _onResize(event:Event):void;/** @override */\nbringToTop():void;}"
-    ]
-  

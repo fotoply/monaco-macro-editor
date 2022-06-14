@@ -1,6 +1,0 @@
-
-    export default [
-      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\foundry.js\\collections\\documentCollections\\worldCollections\\items.d.ts",
-      "/**\n * The singleton collection of Item documents which exist within the active World.\n * This Collection is accessible within the Game object as game.items.\n *\n * @see {@link Item} The Item entity\n * @see {@link ItemDirectory} The ItemDirectory sidebar directory\n */declare class Items extends WorldCollection<typeof foundry.documents.BaseItem,'Items'>{/** @override */static documentName:'Item';/**\n * Register an Item sheet class as a candidate which can be used to display Items of a given type\n * See EntitySheetConfig.registerSheet for details\n */static registerSheet(scope:string,sheetClass:ConstructorOf<ItemSheet>,{label,types,makeDefault}?:{label?:string;types?:string[];makeDefault?:boolean}):void;/**\n * Unregister an Item sheet class, removing it from the list of available sheet Applications to use\n * See EntitySheetConfig.unregisterSheet for details\n */static unregisterSheet(scope:string,sheetClass:ConstructorOf<ItemSheet>,{types}?:{types?:string[]}):void;/**\n * Return an Array of currently registered sheet classes for this Entity type\n */static get registeredSheets():typeof ItemSheet[];}"
-    ]
-  

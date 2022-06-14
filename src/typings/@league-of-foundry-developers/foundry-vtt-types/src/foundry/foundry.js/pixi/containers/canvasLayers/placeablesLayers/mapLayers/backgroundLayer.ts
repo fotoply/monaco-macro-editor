@@ -1,6 +1,0 @@
-
-    export default [
-      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\foundry.js\\pixi\\containers\\canvasLayers\\placeablesLayers\\mapLayers\\backgroundLayer.d.ts",
-      "import{ConfiguredObjectClassForName,DataSourceForPlaceable}from'../../../../../../../types/helperTypes';declare global{/**\n * An extension of the MapLayer that displays underfoot in the background of the Scene.\n */class BackgroundLayer extends MapLayer{/**\n * @remarks This is not overridden in foundry but reflects the real behavior.\n */static get instance():Canvas['background'];/**\n * @remarks This is not overridden in foundry but reflects the real behavior.\n */static get layerOptions():MapLayer.LayerOptions<'background'>;/**\n * The outline of the scene\n */\noutline:PIXI.Graphics|undefined;draw():Promise<this>;/**\n * Draw a background outline which emphasizes what portion of the canvas is playable space and what is buffer.\n */protected _drawOutline():PIXI.Graphics|undefined;getDocuments():Exclude<this['documentCollection'],null>;getZIndex():number;storeHistory(type:PlaceablesLayer.HistoryEventType,data:DataSourceForPlaceable<InstanceType<ConfiguredObjectClassForName<'Tile'>>>):void;}}"
-    ]
-  

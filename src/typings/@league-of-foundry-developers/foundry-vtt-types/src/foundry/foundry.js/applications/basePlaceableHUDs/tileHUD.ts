@@ -1,6 +1,0 @@
-
-    export default [
-      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\foundry.js\\applications\\basePlaceableHUDs\\tileHUD.d.ts",
-      "import{ConfiguredObjectClassForName}from'../../../../types/helperTypes';declare global{/**\n * An implementation of the PlaceableHUD base class which renders a heads-up-display interface for Tile objects.\n * @typeParam Options - the type of the options object\n */class TileHUD<Options extends Application.Options=Application.Options>extends BasePlaceableHUD<\nConcreteTile,Options>{/**\n * @override\n * @defaultValue\n * ```\n * foundry.utils.mergeObject(super.defaultOptions, {\n *   id: \"tile-hud\",\n *   template: \"templates/hud/tile-hud.html\"\n * })\n * ```\n */static get defaultOptions():Application.Options;/** @override */\ngetData(options?:Partial<Options>):ReturnType<BasePlaceableHUD<ConcreteTile>['getData']>&{isVideo:boolean;lockedClass:string;visibilityClass:string;overheadClass:string;underfootClass:string;videoIcon:string;videoTitle:string;};/**\n * @override\n * @param options - (unused)\n */\nsetPosition(options?:Partial<Application.Position>):void;}}type ConcreteTile=InstanceType<ConfiguredObjectClassForName<'Tile'>>;"
-    ]
-  

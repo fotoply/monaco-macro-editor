@@ -1,0 +1,6 @@
+
+    export default [
+      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\client\\apps\\sidebar\\apps\\chat-popout.d.ts",
+      "import type { ConfiguredDocumentClass } from '../../../../../types/helperTypes';\n\ndeclare global {\n  /**\n   * A simple application which supports popping a ChatMessage out to a separate UI window.\n   * @typeParam Options - the type of the options object\n   */\n  class ChatPopout<Options extends ApplicationOptions = ApplicationOptions> extends Application<Options> {\n    constructor(message: InstanceType<ConfiguredDocumentClass<typeof ChatMessage>>, options?: Partial<Options>);\n\n    /**\n     * The displayed Chat Message document\n     */\n    message: InstanceType<ConfiguredDocumentClass<typeof ChatMessage>>;\n\n    /**\n     * @defaultValue\n     * ```typescript\n     * foundry.utils.mergeObject(super.defaultOptions, {\n     *   width: 300,\n     *   height: \"auto\",\n     *   classes: [\"chat-popout\"]\n     * })\n     * ```\n     */\n    static override get defaultOptions(): ApplicationOptions;\n\n    override get id(): string;\n\n    override get title(): string;\n\n    protected override _renderInner(data: object, options?: unknown): Promise<JQuery>;\n  }\n}\n"
+    ]
+  

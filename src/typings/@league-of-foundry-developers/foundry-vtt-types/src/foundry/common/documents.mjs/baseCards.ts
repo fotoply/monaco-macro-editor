@@ -1,0 +1,6 @@
+
+    export default [
+      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\common\\documents.mjs\\baseCards.d.ts",
+      "import { DocumentMetadata } from '../abstract/document.mjs';\nimport { Document } from '../abstract/module.mjs';\nimport * as data from '../data/data.mjs';\nimport { BaseCard } from './baseCard';\n\ntype CardsMetadata = Merge<\n  DocumentMetadata,\n  {\n    name: 'Cards';\n    collection: 'cards';\n    label: 'DOCUMENT.Cards';\n    labelPlural: 'DOCUMENT.CardsPlural';\n    isPrimary: true;\n    types: string[];\n    hasSystemData: true;\n    embedded: {\n      Card: typeof BaseCard;\n    };\n  }\n>;\n\n/**\n * The base Cards definition which defines common behavior of an Cards document shared by both client and server.\n */\nexport declare class BaseCards extends Document<data.CardsData, null, CardsMetadata> {\n  static override get schema(): typeof data.CardsData;\n\n  static override get metadata(): CardsMetadata;\n\n  /**\n   * A reference to the Collection of Card documents contained within this Cards stack, indexed by _id.\n   */\n  get cards(): this['data']['cards'];\n\n  /**\n   * The sub-type of Cards.\n   */\n  get type(): data.CardsData['type'];\n}\n"
+    ]
+  

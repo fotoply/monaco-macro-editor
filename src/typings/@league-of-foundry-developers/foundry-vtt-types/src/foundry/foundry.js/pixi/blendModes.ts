@@ -1,6 +1,0 @@
-
-    export default [
-      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\foundry.js\\pixi\\blendModes.d.ts",
-      "declare const BLEND_MODES:{/**\n * A custom blend mode equation which chooses the maximum color from each channel within the stack.\n * @defaultValue\n * ```typescript\n * [\n *   WebGL2RenderingContext.ONE,\n *   WebGL2RenderingContext.ONE,\n *   WebGL2RenderingContext.ONE,\n *   WebGL2RenderingContext.ONE,\n *   WebGL2RenderingContext.MAX,\n *   WebGL2RenderingContext.MAX,\n * ]\n * ```\n */\nMAX_COLOR:[GLenum,GLenum,GLenum,GLenum,GLenum,GLenum];/**\n * A custom blend mode equation which chooses the minimum color from each channel within the stack.\n * @defaultValue\n * ```typescript\n * [\n *   WebGL2RenderingContext.ONE,\n *   WebGL2RenderingContext.ONE,\n *   WebGL2RenderingContext.ONE,\n *   WebGL2RenderingContext.ONE,\n *   WebGL2RenderingContext.MIN,\n *   WebGL2RenderingContext.MAX,\n * ]\n * ```\n */\nMIN_COLOR:[GLenum,GLenum,GLenum,GLenum,GLenum,GLenum];};"
-    ]
-  

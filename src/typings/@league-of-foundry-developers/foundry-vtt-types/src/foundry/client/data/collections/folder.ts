@@ -1,0 +1,6 @@
+
+    export default [
+      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\client\\data\\collections\\folder.d.ts",
+      "import { ConfiguredDocumentClass } from '../../../../types/helperTypes';\n\ndeclare global {\n  /**\n   * The singleton collection of Folder documents which exist within the active World.\n   * This Collection is accessible within the Game object as game.fog.\n   *\n   * @see {@link Folder} The Folder document\n   */\n  class Folders extends WorldCollection<typeof foundry.documents.BaseFolder, 'Folders'> {\n    constructor(data?: StoredDocument<InstanceType<ConfiguredDocumentClass<typeof Folder>>>['data']['_source'][]);\n\n    /**\n     * Track which Folders are currently expanded in the UI\n     */\n    protected _expanded: Partial<Record<string, boolean>>;\n\n    static override documentName: 'Folder';\n\n    override render(force?: boolean, context?: ApplicationOptions): void;\n\n    /**\n     * Refresh the display of any active JournalSheet instances where the folder list will change.\n     */\n    protected _refreshJournalEntrySheets(): void;\n  }\n}\n"
+    ]
+  

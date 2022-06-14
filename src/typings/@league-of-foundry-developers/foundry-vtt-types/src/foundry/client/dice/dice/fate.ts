@@ -1,0 +1,6 @@
+
+    export default [
+      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\client\\dice\\dice\\fate.d.ts",
+      "/**\n * A type of DiceTerm used to represent a three-sided Fate/Fudge die.\n * Mathematically behaves like 1d3-2\n */\ndeclare class FateDie extends DiceTerm {\n  constructor(termData?: Partial<FateDie.TermData>);\n\n  faces: 3;\n\n  /**\n   * @defaultValue `'f'`\n   */\n  static DENOMINATION: string;\n\n  static override MODIFIERS: FateDie.Modifiers;\n\n  override roll({ minimize, maximize }?: { minimize: boolean; maximize: boolean }): DiceTerm.Result;\n\n  override getResultLabel(result: DiceTerm.Result): string;\n}\n\ndeclare namespace FateDie {\n  interface TermData extends DiceTerm.TermData {\n    modifiers: Array<keyof typeof FateDie['MODIFIERS']>;\n  }\n\n  interface Modifiers {\n    r: Die['reroll'];\n    rr: Die['rerollRecursive'];\n    k: Die['keep'];\n    kh: Die['keep'];\n    kl: Die['keep'];\n    d: Die['drop'];\n    dh: Die['drop'];\n    dl: Die['drop'];\n  }\n}\n"
+    ]
+  

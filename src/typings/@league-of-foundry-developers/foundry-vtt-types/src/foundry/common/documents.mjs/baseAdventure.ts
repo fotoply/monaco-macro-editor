@@ -1,0 +1,6 @@
+
+    export default [
+      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\common\\documents.mjs\\baseAdventure.d.ts",
+      "import { DocumentMetadata } from '../abstract/document.mjs';\nimport { Document } from '../abstract/module.mjs';\nimport * as data from '../data/data.mjs';\n\ntype AdventureMetadata = Merge<\n  DocumentMetadata,\n  {\n    name: 'Adventure';\n    collection: 'adventures';\n    label: 'DOCUMENT.Adventure';\n    labelPlural: 'DOCUMENT.Adventures';\n    isPrimary: false;\n    isEmbedded: false;\n  }\n>;\n\n/**\n * The base Adventure model definition which defines common behavior of an Adventure document between both client and server.\n *\n * WARNING: This document is an early prototype which will be fully implemented in V10.\n * Until then it is for internal use only. Use this at your own risk.\n * @internal\n */\nexport class BaseAdventure extends Document<data.AdventureData, null, AdventureMetadata> {\n  static override get schema(): typeof data.AdventureData;\n\n  static override get metadata(): AdventureMetadata;\n\n  /**\n   * A convenient reference to the file path of the Adventure's profile image.\n   */\n  get img(): string | null | undefined;\n\n  /**\n   * Provide a thumbnail image path used to represent the Adventure document.\n   */\n  get thumbnail(): string | null | undefined;\n}\n"
+    ]
+  

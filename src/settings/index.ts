@@ -3,7 +3,7 @@ import { NewOptionsType } from "../types";
 import { titleCase } from "../utils/titleCase";
 
 type JSPrimitive<T> = {
-  constructor: ClientSettings.PartialSetting<T>["type"];
+  constructor: ClientSettings.PartialSettingConfig<T>["type"];
 };
 
 type Settings = {
@@ -89,7 +89,7 @@ export function registerSettings() {
 
 function defineSetting<T>(
   settingName: keyof Settings,
-  options: Partial<ClientSettings.PartialSetting<T>>
+  options: Partial<ClientSettings.PartialSettingConfig<T>>
 ): void {
   if ("settings" in game) {
     game.settings.register<string, string, T>(

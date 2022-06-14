@@ -1,0 +1,6 @@
+
+    export default [
+      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\client\\data\\documents\\table-result.d.ts",
+      "declare global {\n  /**\n   * The client-side TableResult document which extends the common BaseTableResult model.\n   * Each TableResult belongs to the results collection of a RollTable entity.\n   * Each TableResult contains a TableResultData object which provides its source data.\n   *\n   * @see {@link data.TableResultData}        The TableResult data schema\n   * @see {@link documents.RollTable}         The RollTable document which contains TableResult embedded documents\n   */\n  class TableResult extends ClientDocumentMixin(foundry.documents.BaseTableResult) {\n    /**\n     * @param data   - Initial data provided to construct the TableResult document\n     * @param parent - The parent RollTable document to which this result belongs\n     */\n    constructor(...args: ConstructorParameters<typeof foundry.documents.BaseTableResult>);\n\n    /**\n     * A path reference to the icon image used to represent this result\n     */\n    get icon(): string;\n\n    /**\n     * Prepare a string representation for the result which (if possible) will be a dynamic link or otherwise plain text\n     * @returns The text to display\n     */\n    getChatText(): string;\n  }\n}\n\nexport {};\n"
+    ]
+  

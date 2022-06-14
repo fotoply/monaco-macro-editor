@@ -1,0 +1,6 @@
+
+    export default [
+      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\client\\core\\nue.d.ts",
+      "/**\n * Responsible for managing the New User Experience workflows.\n */\ndeclare class NewUserExperience {\n  constructor();\n\n  /**\n   * Initialize the new user experience.\n   * Currently, this generates some chat messages with hints for getting started if we detect this is a new world.\n   */\n  initialize(): void;\n\n  /**\n   * Add event listeners to the chat card links.\n   * @param msg  - The ChatMessage being rendered.\n   * @param html - The HTML content of the message.\n   * @internal\n   */\n  protected _activateListeners(msg: ChatMessage, html: JQuery): void;\n\n  /**\n   * Perform some special action triggered by clicking on a link in a NUE chat card.\n   * @param event - The click event.\n   * @internal\n   */\n  protected _onActionLink(event: Event): void;\n\n  /**\n   * Switch to the appropriate tab when a user clicks on a link in the chat message.\n   * @param event - The click event.\n   * @internal\n   */\n  protected _onTabLink(event: Event): void;\n}\n"
+    ]
+  

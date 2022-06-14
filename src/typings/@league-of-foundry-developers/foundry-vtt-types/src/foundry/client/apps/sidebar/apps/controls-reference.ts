@@ -1,0 +1,6 @@
+
+    export default [
+      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\client\\apps\\sidebar\\apps\\controls-reference.d.ts",
+      "/**\n * Keyboard Controls Reference Sheet\n * @typeParam Options - the type of the options object\n * @typeParam Data    - The data structure used to render the handlebars template.\n * @deprecated since v9\n */\ndeclare class ControlsReference<\n  Options extends ApplicationOptions = ApplicationOptions,\n  Data extends object = ControlsReference.Data\n> extends Application<Options> {\n  /**\n   * @defaultValue\n   * ```typescript\n   * const options = super.defaultOptions;\n   * options.title = game.i18n.localize(\"CONTROLS.Title\");\n   * options.id = \"controls-reference\";\n   * options.template = \"templates/sidebar/apps/controls-reference.html\";\n   * options.width = 600;\n   * ```\n   */\n  static get defaultOptions(): ApplicationOptions;\n\n  override getData(options?: Partial<Options>): Data | Promise<Data>;\n}\n\ndeclare namespace ControlsReference {\n  interface Data {\n    controlKey: '⌘' | 'Control';\n  }\n}\n"
+    ]
+  

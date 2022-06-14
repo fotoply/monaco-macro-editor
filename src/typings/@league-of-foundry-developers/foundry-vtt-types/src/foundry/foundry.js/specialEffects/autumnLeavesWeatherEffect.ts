@@ -1,6 +1,0 @@
-
-    export default [
-      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\foundry.js\\specialEffects\\autumnLeavesWeatherEffect.d.ts",
-      "/**\n * A special full-screen weather effect which uses one Emitters to render gently falling autumn leaves\n */declare class AutumnLeavesWeatherEffect extends SpecialEffect{static get label():string;static get effectOptions():SpecialEffect.Options;getParticleEmitters():PIXI.particles.Emitter[];protected _getLeafEmitter(parent:PIXI.Container):PIXI.particles.Emitter;/**\n * @defaultValue\n * ```typescript\n * {\n *   maxSpeed: 0,\n *   noRotation: false,\n *   blendMode: 'normal',\n *   emitterLifetime: -1,\n *   pos: {\n *     x: 0,\n *     y: 0\n *   },\n *   spawnType: 'rect',\n *   alpha: {\n *     start: 0.9,\n *     end: 0.5\n *   },\n *   scale: {\n *     start: 0.2,\n *     end: 0.4,\n *     minimumScaleMultiplier: 0.5\n *   },\n *   speed: {\n *     start: 20,\n *     end: 60,\n *     minimumSpeedMultiplier: 0.6\n *   },\n *   startRotation: {\n *     min: 0,\n *     max: 365\n *   },\n *   rotation: 180,\n *   rotationSpeed: {\n *     min: 100,\n *     max: 200\n *   },\n *   lifetime: {\n *     min: 10,\n *     max: 10\n *   }\n * }\n * ```\n */static LEAF_CONFIG:PIXI.particles.EmitterConfig|PIXI.particles.OldEmitterConfig;}"
-    ]
-  

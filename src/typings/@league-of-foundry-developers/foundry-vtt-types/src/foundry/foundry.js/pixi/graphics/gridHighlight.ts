@@ -1,6 +1,0 @@
-
-    export default [
-      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\foundry.js\\pixi\\graphics\\gridHighlight.d.ts",
-      "/**\n * A special Graphics class which handles Grid layer highlighting\n */declare class GridHighlight extends PIXI.Graphics{constructor(name:string,...args:ConstructorParameters<typeof PIXI.Graphics>);/**\n * Track the Grid Highlight name\n */\nname:string;/**\n * Track distinct positions which have already been highlighted\n */\npositions:Set<string>;/**\n * Record a position that is highlighted and return whether or not it should be rendered\n * @param x - The x-coordinate to highlight\n * @param y - The y-coordinate to highlight\n * @returns Whether or not to draw the highlight for this location\n */\nhighlight(x:number,y:number):boolean;/**\n * Extend the Graphics clear logic to also reset the highlighted positions\n * @remarks Returns `void`, see https://gitlab.com/foundrynet/foundryvtt/-/issues/4732\n */\nclear():any;/**\n * Extend how this Graphics container is destroyed to also remove parent layer references\n */\ndestroy(options?:{children?:boolean;texture?:boolean;baseTexture?:boolean}):void;}"
-    ]
-  

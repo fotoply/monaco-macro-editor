@@ -1,6 +1,0 @@
-
-    export default [
-      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\foundry.js\\applications\\formApplications\\worldConfig.d.ts",
-      "/**\n * The World Management setup application\n */declare class WorldConfig extends FormApplication<WorldConfig.Options,WorldConfig.Data,Game.World>{/**\n * @defaultValue\n * ```typescript\n * mergeObject(super.defaultOptions, {\n *   id: \"world-config\",\n *   template: \"templates/setup/world-config.html\",\n *   width: 600,\n *   height: \"auto\",\n *   create: false\n * });\n * ```\n */static get defaultOptions():WorldConfig.Options;/** @override */get title():string;/**\n * @param options - (unused)\n * @override\n */\ngetData(options?:Partial<WorldConfig.Options>):WorldConfig.Data;/**\n * @remarks This method returns `Promise<void>`.\n * @override\n */protected _onSubmit(event:Event):Promise<any>;/**\n * @remarks This method does not exist on WorldConfig and only exists to make the typescript compile!\n */protected _updateObject(...args:unknown[]):Promise<unknown>;}declare namespace WorldConfig{interface Data{world:WorldConfig['object'];systems:Game.System[];isCreate:WorldConfig['options']['create'];submitText:string;nextDate:string;nextTime:string;}interface Options extends FormApplication.Options{/**\n * @defaultValue `false`\n */\ncreate:boolean;}}"
-    ]
-  

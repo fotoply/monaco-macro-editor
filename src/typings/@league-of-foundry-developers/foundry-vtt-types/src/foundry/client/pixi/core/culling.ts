@@ -1,0 +1,6 @@
+
+    export default [
+      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\client\\pixi\\core\\culling.d.ts",
+      "/**\n * A tool for culling the renderable state of objects which are outside the current viewport.\n */\ndeclare class ScreenCulling {\n  constructor();\n\n  /**\n   * Toggle the renderable state of objects based on the current viewport rectangle\n   */\n  cull(rect: Rectangle): void;\n\n  /**\n   * Test whether rectangular bounds intersect\n   * @param rect   - The target rectangle (the screen)\n   * @param bounds - The reference rectangle (the object)\n   * @returns Do they intersect?\n   */\n  intersects(rect: Rectangle, bounds: Rectangle): boolean;\n}\n\n/**\n * An experimental approach to culling using the quadtree mapping rather than the screen rectangle.\n * @internal\n */\ndeclare class QuadtreeCulling {\n  constructor();\n\n  cull(screen: Rectangle): void;\n\n  protected _getRect(screen: Rectangle): NormalizedRectangle;\n}\n\n/**\n * Benchmark the performance of different culling methods\n * @internal\n */\ndeclare function benchmarkCulling(n?: number): Promise<void>;\n"
+    ]
+  

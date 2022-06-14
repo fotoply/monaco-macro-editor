@@ -1,6 +1,0 @@
-
-    export default [
-      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\foundry.js\\clientDocuments\\setting.d.ts",
-      "import{DocumentModificationOptions}from'../../common/abstract/document.mjs';declare global{/**\n * The client-side Setting document which extends the common BaseSetting model.\n * Each Setting document contains SettingData which defines its data schema.\n * @see {@link data.SettingData}              The Setting data schema\n * @see {@link documents.WorldSettings}       The world-level collection of Setting documents\n */class Setting extends ClientDocumentMixin(foundry.documents.BaseSetting){/**\n * A convenient alias to the key attribute of the setting data\n */get key():string;/**\n * A convenient alias to the parsed value attribute of the setting data.\n */get value():unknown;/** @override */protected _onCreate(data:foundry.data.SettingData['_source'],options:DocumentModificationOptions,userId:string):void;protected _onUpdate(changed:DeepPartial<foundry.data.SettingData['_source']>,options:DocumentModificationOptions,userId:string):void;}}export{};"
-    ]
-  

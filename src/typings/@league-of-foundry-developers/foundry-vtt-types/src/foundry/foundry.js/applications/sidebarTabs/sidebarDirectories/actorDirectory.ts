@@ -1,6 +1,0 @@
-
-    export default [
-      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\foundry.js\\applications\\sidebarTabs\\sidebarDirectories\\actorDirectory.d.ts",
-      "/**\n * A directory list of Actor entities in the Sidebar\n * @see {@link Actor}\n */declare class ActorDirectory extends SidebarDirectory{/**\n * @override\n */static get entity():'Actor';/**\n * @override\n * @see {@link Game.actors}\n */static get collection():Game['actors'];/**\n * @param options - (unused)\n * @override\n */\ngetData(options?:Partial<SidebarDirectory.Options>):ActorDirectory.Data;/**\n * @param selector - (unused)\n * @override\n */protected _canDragStart(selector:string|null):boolean;/**\n * @override\n */protected _onDragStart(event:DragEvent):false|void;/**\n * @param selector - (unused)\n * @override\n */protected _canDragDrop(selector:string|null):boolean;/**\n * @override\n */protected _onClickEntityName(event:JQuery.ClickEvent):Promise<void>;/**\n * @override\n */protected _getEntryContextOptions():ContextMenuEntry[];}declare namespace ActorDirectory{interface Data extends SidebarDirectory.Data{/**\n * @defaultValue `'templates/sidebar/folder-partial.html'`\n */\nfolderPartial:string;/**\n * @defaultValue `'templates/sidebar/actor-partial.html'`\n */\nentityPartial:string;}}"
-    ]
-  

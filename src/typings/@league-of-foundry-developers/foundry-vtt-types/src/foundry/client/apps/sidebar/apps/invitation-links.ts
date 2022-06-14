@@ -1,0 +1,6 @@
+
+    export default [
+      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\client\\apps\\sidebar\\apps\\invitation-links.d.ts",
+      "/**\n * Game Invitation Links Reference\n *\n * @typeParam Options - the type of the options object\n * @typeParam Data    - The data structure used to render the handlebars template.\n */\ndeclare class InvitationLinks<\n  Options extends ApplicationOptions = ApplicationOptions,\n  Data extends object = InvitationLinks.Data\n> extends Application<Options> {\n  /**\n   * @defaultValue\n   * ```typescript\n   * foundry.utils.mergeObject(super.defaultOptions, {\n   *   id: \"invitation-links\",\n   *   template: \"templates/sidebar/apps/invitation-links.html\",\n   *   title: game.i18n.localize(\"INVITATIONS.Title\"),\n   *   width: 400\n   * })\n   * ```\n   */\n  static override get defaultOptions(): ApplicationOptions;\n\n  override getData(options?: Partial<Options> | undefined): Promise<Data>;\n\n  override activateListeners(html: JQuery): void;\n}\n\ndeclare namespace InvitationLinks {\n  type Adddresses = Game.Data['addresses'];\n  interface Data extends Adddresses {\n    remoteClass?: string;\n    remoteTitle?: string;\n    failedCheck?: boolean;\n    canConnect?: boolean;\n  }\n}\n"
+    ]
+  

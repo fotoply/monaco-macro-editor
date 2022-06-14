@@ -1,0 +1,6 @@
+
+    export default [
+      "engine.io-client\\build\\esm\\transports\\websocket.d.ts",
+      "import { Transport } from \"../transport.js\";\nexport declare class WS extends Transport {\n    private ws;\n    /**\n     * WebSocket transport constructor.\n     *\n     * @api {Object} connection options\n     * @api public\n     */\n    constructor(opts: any);\n    /**\n     * Transport name.\n     *\n     * @api public\n     */\n    get name(): string;\n    /**\n     * Opens socket.\n     *\n     * @api private\n     */\n    doOpen(): this;\n    /**\n     * Adds event listeners to the socket\n     *\n     * @api private\n     */\n    addEventListeners(): void;\n    /**\n     * Writes data to socket.\n     *\n     * @param {Array} array of packets.\n     * @api private\n     */\n    write(packets: any): void;\n    /**\n     * Closes socket.\n     *\n     * @api private\n     */\n    doClose(): void;\n    /**\n     * Generates uri for connection.\n     *\n     * @api private\n     */\n    uri(): string;\n    /**\n     * Feature detection for WebSocket.\n     *\n     * @return {Boolean} whether this transport is available.\n     * @api public\n     */\n    check(): boolean;\n}\n"
+    ]
+  

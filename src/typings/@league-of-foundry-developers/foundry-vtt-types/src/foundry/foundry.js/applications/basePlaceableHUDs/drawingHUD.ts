@@ -1,6 +1,0 @@
-
-    export default [
-      "@league-of-foundry-developers\\foundry-vtt-types\\src\\foundry\\foundry.js\\applications\\basePlaceableHUDs\\drawingHUD.d.ts",
-      "import{ConfiguredObjectClassForName}from'../../../../types/helperTypes';declare global{/**\n * An implementation of the PlaceableHUD base class which renders a heads-up-display interface for Drawing objects.\n * @typeParam Options - the type of the options object\n */class DrawingHUD<Options extends Application.Options=Application.Options>extends BasePlaceableHUD<\nConcreteDrawing,Options>{/**\n * @override\n * @defaultValue\n * ```\n * foundry.utils.mergeObject(super.defaultOptions, {\n *   id: \"drawing-hud\",\n *   template: \"templates/hud/drawing-hud.html\"\n * })\n * ```\n */static get defaultOptions():Application.Options;/** @override */\ngetData(options?:Partial<Options>):ReturnType<BasePlaceableHUD<ConcreteDrawing>['getData']>&{lockedClass:string;visibilityClass:string;};/**\n * @override\n * @param options - (unused)\n */\nsetPosition(options?:Partial<Application.Position>):void;}}type ConcreteDrawing=InstanceType<ConfiguredObjectClassForName<'Drawing'>>;"
-    ]
-  
