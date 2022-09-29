@@ -154,10 +154,13 @@ export async function attachMonacoEditor(id: string, form: HTMLFormElement) {
   select.addEventListener("change", (e) => {
     const model = editor.getModel();
     if (!model) return;
+    
+    let selectValue = select.value ?? "script";
+    let scriptingValue = selectValue ? "javascript" : "plaintext";
 
     monaco.editor.setModelLanguage(
       model,
-      select.value === "script" ? "javascript" : "plaintext"
+      scriptingValue
     );
 
     if (!["script", "chat"].includes(select.value)) {
