@@ -107,14 +107,20 @@ export async function attachMonacoEditor(id: string, form: HTMLFormElement) {
   const div = document.createElement("div");
   Object.assign(div.style, { width: "100%", height: "calc(100% - 24px)" });
 
-  const select: HTMLSelectElement = form.querySelector('select[name="type"]')!;
+  let select: HTMLSelectElement = form.querySelector('select[name="type"]')!;
+  
+  if(select === null) {
+     select = {};
+     select.fake = true;
+     select.value = "script";
+  }
 
   commandLabel.insertAdjacentElement("beforeend", div);
 
   const editor = monaco.editor.create(div, {
     // editor specific
     value: oldTextArea.value,
-    language: select?.value === "script" ? "javascript" : "plaintext",
+    language: select.value === "script" ? "javascript" : "plaintext",
 
     // permanent ones
     minimap: {
@@ -150,24 +156,26 @@ export async function attachMonacoEditor(id: string, form: HTMLFormElement) {
     // probably unnecessary but we should clean up after ourselves.
     observer.disconnect();
   })
+  
+  if(select.fake === undefined || select.fake === false) {
+    select.addEventListener("change", (e) => {
+      const model = editor.getModel();
+      if (!model) return;
 
-  select.addEventListener("change", (e) => {
-    const model = editor.getModel();
-    if (!model) return;
-    
-    let scriptingValue = select?.value === "script" ? "javascript" : "plaintext";
+      let scriptingValue = select?.value === "script" ? "javascript" : "plaintext";
 
-    monaco.editor.setModelLanguage(
-      model,
-      scriptingValue
-    );
-
-    if (!["script", "chat"].includes(select.value)) {
-      console.warn(
-        `Monaco Editor | Received "${select.value}" from select, defaulted to plaintext editor`
+      monaco.editor.setModelLanguage(
+        model,
+        scriptingValue
       );
-    }
-  });
+
+      if (!["script", "chat"].includes(select.value)) {
+        console.warn(
+          `Monaco Editor | Received "${select.value}" from select, defaulted to plaintext editor`
+        );
+      }
+    });
+  }
 }
 
 function createEditorCloseHook(id: string, callback: Function)
