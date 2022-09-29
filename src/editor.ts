@@ -114,7 +114,7 @@ export async function attachMonacoEditor(id: string, form: HTMLFormElement) {
   const editor = monaco.editor.create(div, {
     // editor specific
     value: oldTextArea.value,
-    language: select.value === "script" ? "javascript" : "plaintext",
+    language: select?.value === "script" ? "javascript" : "plaintext",
 
     // permanent ones
     minimap: {
@@ -155,8 +155,7 @@ export async function attachMonacoEditor(id: string, form: HTMLFormElement) {
     const model = editor.getModel();
     if (!model) return;
     
-    let selectValue = select.value ?? "script";
-    let scriptingValue = selectValue ? "javascript" : "plaintext";
+    let scriptingValue = select?.value === "script" ? "javascript" : "plaintext";
 
     monaco.editor.setModelLanguage(
       model,
