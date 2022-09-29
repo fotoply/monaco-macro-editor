@@ -162,7 +162,7 @@ export async function attachMonacoEditor(id: string, form: HTMLFormElement) {
       const model = editor.getModel();
       if (!model) return;
 
-      let scriptingValue = select?.value === "script" ? "javascript" : "plaintext";
+      let scriptingValue = select.value === "script" ? "javascript" : "plaintext";
 
       monaco.editor.setModelLanguage(
         model,
