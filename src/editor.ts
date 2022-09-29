@@ -109,7 +109,10 @@ export async function attachMonacoEditor(id: string, form: HTMLFormElement) {
 
   let select: HTMLSelectElement = form.querySelector('select[name="type"]')!;
   
-  if(select === null) {
+  console.warn("Select", select);
+  console.warn("Form", form);
+  
+  if(select === null || select === undefined) {
      select = {};
      select.fake = true;
      select.value = "script";
